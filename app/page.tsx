@@ -12,7 +12,7 @@ export default function Home() {
   if (isLoading) return <div>Loading...</div>;
   
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 p-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 p-4 gap-4">
       {data?.map((movie: any ) =>(
         <MovieCard key={movie.id} movie={movie} />
       ))}

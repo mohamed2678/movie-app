@@ -9,7 +9,7 @@ type Props = {
 
 export default function MovieCard({ movie }: Props) {
   return (
-    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover-scale=105 transition">
+    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition">
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
