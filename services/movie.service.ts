@@ -39,3 +39,19 @@ export const searchMovies = async (query: string) => {
 
   return res.data.results || [];
 };
+
+export const getMovieCredits = async (id: string) => {
+  const res = await api.get(`/movie/${id}/credits`, {
+    params: { api_key: API_KEY },
+  });
+
+  return res.data.cast;
+};
+
+export const getMovieVideos = async (id: string) => {
+  const res = await api.get(`/movie/${id}/videos`, {
+    params: { api_key: API_KEY },
+  });
+
+  return res.data.results;
+};

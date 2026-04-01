@@ -7,7 +7,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="text-xl font-bold">
-          🎬 MovieApp
+          🎬 GalalCinema
         </Link>
 
         {/* Links */}
