@@ -37,5 +37,5 @@ export const searchMovies = async (query: string) => {
     },
   });
 
-  return res.data.results;
+  return res.data.results || [];
 };
