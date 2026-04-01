@@ -8,7 +8,8 @@ type Props = {
 };
 
 export default async function MovieDetailsPage({ params }: Props) {
-  const { id } = (await params) as { id: string };
+  console.log("PARAMS:", params);
+  const { id } = await params;
   const movie = await getMovieDetails(id);
 
   if (!movie) {

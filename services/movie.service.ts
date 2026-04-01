@@ -17,11 +17,6 @@ const res = await api.get("/trending/movie/day", {
 };
 
 export const getMovieDetails = async (id: string) => {
-  if (!id) {
-    console.error("getMovieDetails called without an id");
-    return null;
-  }
-
   try {
     const res = await api.get(`/movie/${id}`, {
       params: { api_key: API_KEY },
@@ -29,7 +24,18 @@ export const getMovieDetails = async (id: string) => {
 
     return res.data;
   } catch (err) {
-    console.error("Movie not found:", id, err?.message ?? err);
+    console.error("Movie not found:", id);
     return null;
   }
+};
+
+export const searchMovies = async (query: string) => {
+  const res = await api.get("/search/movie", {
+    params: {
+      api_key: API_KEY,
+      query,
+    },
+  });
+
+  return res.data.results;
 };
